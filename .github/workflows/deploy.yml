@@ -17,9 +17,11 @@
 
         - name: Clean install dependencies
           run: npm ci
-        - name: Setup Git 
-          run: |
-            git config --global user.email "jame.flochlecarour@gmail.com"
-            git config --global user.name "JameFLC"
-        - name: Deploy SvelteKit app
-          run: npm run deploy
+          
+        - name: Build the project
+          run: npm run build
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v4
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./build
