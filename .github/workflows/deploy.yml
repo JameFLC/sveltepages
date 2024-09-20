@@ -18,12 +18,5 @@
         - name: Clean install dependencies
           run: npm ci
           
-        - name: Build SvelteKit app
-          run: npm run build
-
-        - name: Deploy to GitHub Pages
-          uses: actions/deploy@v1
-          with:
-            github_token: ${{ secrets.GH_TOKEN }}
-            folder: build
-            branch: gh-pages
+        - name: Deploy SvelteKit app
+          run: npm run deploy
