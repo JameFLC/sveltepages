@@ -1,2 +1,11 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+	import Counter from '$lib/components/counter.svelte';
+</script>
+
 <h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<a href="{base}/blog">Go to blog</a>
+
+<h3>Here is a conter for you</h3>
+
+<Counter />
