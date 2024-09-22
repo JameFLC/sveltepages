@@ -51,7 +51,7 @@
 	}
 </script>
 
-<div class="wheel" style="--angle: {(currentPos * speed * pixelRatio) / 10}deg">
+<div class="wheel" style="--angle: {(currentPos * speed * pixelRatio) / 15}deg">
 	<div class="topleft"></div>
 	<div class="topright"></div>
 	<div class="bottomleft"></div>
@@ -62,8 +62,7 @@
 	<div
 		use:draggable={{
 			position: elementPosition,
-			axis: 'x',
-			grid: [10, 10]
+			axis: 'x'
 		}}
 		on:neodrag:start={(e) => {
 			previousOffset = currentPos;
@@ -127,6 +126,6 @@
 		width: 100%;
 
 		cursor: grab;
-		/* background-color: rgba(255, 0, 0, 0.342); */
+		background-color: rgba(255, 0, 0, 0.342);
 	}
 </style>
