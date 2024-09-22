@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { draggable } from '@neodrag/svelte';
+	import { onMount } from 'svelte';
 
 	export let damping: number = 1;
 	export let speed: number = 1;
@@ -13,6 +14,10 @@
 	let previousOffset: number = 0;
 
 	let velocity: number = 0;
+
+	let pixelRatio: number = 1;
+
+	onMount(() => (pixelRatio = window ? window.devicePixelRatio : 1));
 
 	function handleGrab(dragOffset: number) {
 		elementPosition = { x: dragOffset, y: 0 };
@@ -46,7 +51,7 @@
 	}
 </script>
 
-<div class="wheel" style="--angle: {(speed * currentPos) / 10}deg">
+<div class="wheel" style="--angle: {(currentPos * speed * pixelRatio) / 10}deg">
 	<div class="topleft"></div>
 	<div class="topright"></div>
 	<div class="bottomleft"></div>
