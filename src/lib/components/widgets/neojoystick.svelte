@@ -27,7 +27,7 @@
 	.dragzone {
 		--size-x: 128px;
 		--size-y: 128px;
-		width: var(--size-x);
+		width: min(var(--size-x), 90vw);
 		height: var(--size-y);
 		outline: 2px solid rgb(119, 119, 119);
 		border-radius: 16px;
