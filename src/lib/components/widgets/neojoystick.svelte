@@ -47,6 +47,12 @@
 		border-radius: 16px;
 		background-color: rgba(128, 128, 128, 0.541);
 		transform: translate(var(--offset-x), var(--offset-y));
-		/* transition: transform 0.075s ease-out; */
+		transition: transform 0.075s ease-out;
+	}
+
+	@media (pointer: none), (pointer: coarse) {
+		.joystick {
+			transition: transform 0s linear;
+		}
 	}
 </style>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { draggable } from '@neodrag/svelte';
+	import { linear } from 'svelte/easing';
 
 	let position = { x: 0, y: 0 };
 
@@ -75,7 +76,13 @@
 
 		transform: rotate(var(--angle));
 
-		/* transition: transform 0.075s ease-out; */
+		transition: transform 0.075s ease-out;
+	}
+
+	@media (pointer: none), (pointer: coarse) {
+		.knob {
+			transition: transform 0s linear;
+		}
 	}
 
 	.tick {
