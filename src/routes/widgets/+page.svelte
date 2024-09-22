@@ -5,6 +5,7 @@
 	import Knob from '$lib/components/widgets/knob.svelte';
 	import Neojoystick from '$lib/components/widgets/neojoystick.svelte';
 	import Neoknob from '$lib/components/widgets/neoknob.svelte';
+	import Physicswheel from '$lib/components/widgets/physicswheel.svelte';
 	import Slider from '$lib/components/widgets/slider.svelte';
 	import { Pos } from '$lib/types';
 
@@ -21,26 +22,12 @@
 <Slider bind:value={sliderValue} step={1} />
 
 <Centerer>
-	<Knob
-		on:angleChanged={(e) => {
-			angle = e.detail.knobAngle;
-		}}
-	/>
-	<p>angle is {angle ? angle.toFixed(2) : '0.00'} degrees</p>
-	<br />
-	<Joystick
-		containerSize={new Pos(512, 512)}
-		joystickSize={new Pos(64 + 32, 64 + 32)}
-		on:angleChanged={(e) => {
-			angle = e.detail.clampedOffset;
-		}}
-	/>
-	{#if offset}
-		<p>offset is {offset.x.toFixed(0)} : {offset.y.toFixed(0)}</p>
-	{/if}
-
 	<Neoknob />
 	<br />
 	<br />
 	<Neojoystick containerSize={new Pos(512, 512)} joystickSize={new Pos(64 + 32, 64 + 32)} />
+
+	<br />
+	<br />
+	<Physicswheel damping={3} speed={-1.5} />
 </Centerer>
