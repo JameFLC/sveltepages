@@ -3,6 +3,8 @@
 	import Counter from '$lib/components/counter.svelte';
 	import Joystick from '$lib/components/widgets/joystick.svelte';
 	import Knob from '$lib/components/widgets/knob.svelte';
+	import Neojoystick from '$lib/components/widgets/neojoystick.svelte';
+	import Neoknob from '$lib/components/widgets/neoknob.svelte';
 	import Slider from '$lib/components/widgets/slider.svelte';
 	import { Pos } from '$lib/types';
 
@@ -27,7 +29,7 @@
 	<p>angle is {angle ? angle.toFixed(2) : '0.00'} degrees</p>
 	<br />
 	<Joystick
-		containerSize={new Pos(1024, 512)}
+		containerSize={new Pos(512, 512)}
 		joystickSize={new Pos(64 + 32, 64 + 32)}
 		on:angleChanged={(e) => {
 			angle = e.detail.clampedOffset;
@@ -36,4 +38,9 @@
 	{#if offset}
 		<p>offset is {offset.x.toFixed(0)} : {offset.y.toFixed(0)}</p>
 	{/if}
+
+	<Neoknob />
+	<br />
+	<br />
+	<Neojoystick containerSize={new Pos(512, 512)} joystickSize={new Pos(64 + 32, 64 + 32)} />
 </Centerer>
