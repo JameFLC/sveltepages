@@ -126,6 +126,6 @@
 		width: 100%;
 
 		cursor: grab;
-		background-color: rgba(255, 0, 0, 0.342);
+		/* background-color: rgba(255, 0, 0, 0.342); */
 	}
 </style>

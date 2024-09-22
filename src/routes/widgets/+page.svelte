@@ -29,5 +29,5 @@
 
 	<br />
 	<br />
-	<Physicswheel damping={3} speed={-1} />
+	<Physicswheel damping={3} speed={-2} />
 </Centerer>
