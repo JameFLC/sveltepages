@@ -75,7 +75,7 @@
 
 		transform: rotate(var(--angle));
 
-		transition: transform 0.075s ease-out;
+		/* transition: transform 0.075s ease-out; */
 	}
 
 	.tick {
