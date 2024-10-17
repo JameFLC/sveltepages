@@ -10,3 +10,5 @@
 <h3>Here is a conter for you</h3>
 
 <Counter />
+
+<img src="https://picsum.photos/200/300" alt="" />
